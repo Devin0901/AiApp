@@ -1,9 +1,20 @@
 import React from 'react';
 import { Image, View, Text, ScrollView, TouchableOpacity, StyleSheet, StatusBar, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Masuk = () => {
+    const Tab = createBottomTabNavigator();
+    const navigation = useNavigation();
+
+    const handleDaftar = () =>{
+        navigation.navigate('Daftar');
+    }
+
+    const handleMasuk = () => {
+        navigation.navigate('MainApp');
+    }
+
     return (
         <View contentContainerStyle={styles.container}>
         <ScrollView>
@@ -38,14 +49,16 @@ const Masuk = () => {
                 </View>
             </View>
 
-            <View style={styles.textBoxMasuk}>
+            <TouchableOpacity style={styles.textBoxMasuk} onPress ={handleMasuk}>
               <Text style={styles.buttonTextMasuk}>Masuk</Text>
-            </View>
+            </TouchableOpacity>
 
             <Text style={styles.lupaKataSandi}>Lupa kata sandi kamu?</Text>
             <View style={styles.belumPunyaAkun}>
                 <Text style={styles.belumPunyaAkuns}>Belum Punya Akun? </Text>
-                <Text style={styles.daftar}>Daftar</Text>
+                <TouchableOpacity onPress = {handleDaftar}>
+                    <Text style={styles.daftar}>Daftar</Text>
+                </TouchableOpacity>
             </View>
 
             <View style={styles.googleAndFacebook}>

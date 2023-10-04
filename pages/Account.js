@@ -1,9 +1,31 @@
 import React from 'react';
 import { Image, View, Text, ScrollView, TouchableOpacity, StyleSheet, StatusBar, TextInput, TouchableWithoutFeedback,Dimensions, ImageBackground, rgba} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Account = () => {
+
+    const Tab = createBottomTabNavigator();
+    const navigation = useNavigation();
+
+
+    const handleAccountSetting = () => {
+        navigation.navigate('AccountSetting');
+    }
+
+    const handleReportProblem = () => {
+        navigation.navigate('ReportProblem');
+    }
+
+    const handleTermsAndCondition = () => {
+        navigation.navigate('TermsAndCondition');
+    }
+
+    const handleNotification = () => {
+        navigation.navigate('Notification');
+    }
+
+
     return (
         <View contentContainerStyle={styles.container}>
         <ScrollView>
@@ -30,7 +52,7 @@ const Account = () => {
                 </ImageBackground>
             </View>
 
-            <View style ={styles.accountSetting}>
+            <TouchableOpacity style ={styles.accountSetting} onPress = {handleAccountSetting}>
                 <View style={styles.accountSettingContainer}>
                     <Image style={styles.accountSettingPicture} source={require('../assets/accountSetting.png')} />
                 </View>
@@ -39,9 +61,9 @@ const Account = () => {
                         Pengaturan Akun
                     </Text>
                 </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style ={styles.reportProblem}>
+            <TouchableOpacity style ={styles.reportProblem} onPress = {handleReportProblem}>
                 <View style={styles.reportProblemContainer}>
                     <Image style={styles.reportProblemPicture} source={require('../assets/reportProblem.png')} />
                 </View>
@@ -50,9 +72,9 @@ const Account = () => {
                         Laporkan Masalah
                     </Text>
                 </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style ={styles.termsAndCondition}>
+            <TouchableOpacity style ={styles.termsAndCondition} onPress = {handleTermsAndCondition}>
                 <View style={styles.termsAndConditionContainer}>
                     <Image style={styles.termsAndConditionPicture} source={require('../assets/termsAndCondition.png')} />
                 </View>
@@ -61,9 +83,9 @@ const Account = () => {
                         Syarat dan Ketentuan
                     </Text>
                 </View>
-            </View>
+            </TouchableOpacity>
 
-            <View style ={styles.notification}>
+            <TouchableOpacity style ={styles.notification} onPress = {handleNotification}>
                 <View style={styles.notificationContainer}>
                     <Image style={styles.notificationPicture} source={require('../assets/notification.png')} />
                 </View>
@@ -72,7 +94,7 @@ const Account = () => {
                         Notifikasi
                     </Text>
                 </View>
-            </View>
+            </TouchableOpacity>
 
             </ScrollView>
         </View>

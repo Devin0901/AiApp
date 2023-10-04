@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const Camera = () => {
     return (
         <View>
-            <Text>Camera</Text>
+            <Text></Text>
         </View>
     )
 }

@@ -26,9 +26,9 @@ const RecipeDetailHealty = () => {
                 <View style={styles.innerContainer}>
                 </View>
                 <View style={styles.boxContainer}>
-                    <View style={styles.healtyBox}>
+                    <TouchableOpacity style={styles.healtyBox}>
                         <Text style={styles.healty}>Healty</Text>
-                    </View>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.dietBox} onPress={handleDiet}>
                         <Text style={styles.diet}>Diet</Text>
                     </TouchableOpacity>

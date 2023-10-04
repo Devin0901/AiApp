@@ -21,15 +21,19 @@ const RecipeHowToDiet = () => {
         navigation.navigate('MainApp');
     }
 
+    const handleHealty = () => {
+        navigation.navigate('Recipe');
+    }
+
     return (
         <View contentContainerStyle={styles.container}>
             <ScrollView>
                 <View style={styles.innerContainer}>
                 </View>
                 <View style={styles.boxContainer}>
-                    <View style={styles.healtyBox}>
+                    <TouchableOpacity style={styles.healtyBox} onPress = {handleHealty}>
                         <Text style={styles.healty}>Healty</Text>
-                    </View>
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.dietBox} onPress={handleDiet}>
                         <Text style={styles.diet}>Diet</Text>
                     </TouchableOpacity>
